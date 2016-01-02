@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="ShowRoomManagementModel.v_SearchOverAll_Showroom" Width="2.5" PointX="4" PointY="4.125" />
         <EntityTypeShape EntityType="ShowRoomManagementModel.v_InstallmentDetail" Width="1.875" PointX="6.875" PointY="4.125" />
         <EntityTypeShape EntityType="ShowRoomManagementModel.BlackListedUser" Width="1.5" PointX="10.25" PointY="5.375" />
+        <EntityTypeShape EntityType="ShowRoomManagementModel.v_Recovery" Width="1.5" PointX="10.25" PointY="7.875" IsExpanded="true" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

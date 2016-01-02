@@ -52,56 +52,67 @@
                           </div>
                           <div class="col-lg-2">
                                                 
-                              
+                              <asp:Label ID="Label1" runat="server" Text="Select Recovery Month:"></asp:Label>
                           </div>
                           <div class="col-lg-4">
-                              <asp:Label ID="lblSuccess" runat="server" Text=""  Visible="false" CssClass="alert-success"></asp:Label>                  
-                               <asp:Label ID="lblStatus" runat="server" Text="" Visible="false" CssClass="alert-warning" ></asp:Label>  
+                                              
+                              <ig:WebDropDown ID="webDDL_Months" runat="server" Width="200px"></ig:WebDropDown>
                           </div>
                           <div class="col-lg-3">
-
+                              <asp:Label ID="lblSuccess" runat="server" Text=""  Visible="false" CssClass="alert-success"></asp:Label>  
                           </div>
                        </div>
 
-            <br />
             <br />
                        <!-- Row Applicant -->
             <div class="row">
                 <!-- Blog Entries Column col-md-8  -->
-                <div class="col-lg-12">
-                    <ig:WebDataGrid ID="webDataGrid_BlackListedUsers" runat="server"  AutoGenerateColumns="False" Height="350px" DefaultColumnWidth="185" >
-                        <Columns>
-                            <ig:BoundDataField DataFieldName="CNIC" Key="CNIC">
-                                <Header Text="CNIC">
-                                </Header>
-                            </ig:BoundDataField>
-                            <ig:BoundDataField DataFieldName="Reason" Key="Reason">
-                                <Header Text="Reason">
-                                </Header>
-                            </ig:BoundDataField>
-                            <ig:BoundDataField DataFieldName="Remarks" Key="Remarks">
-                                <Header Text="Remarks">
-                                </Header>
-                            </ig:BoundDataField>
-                            <ig:BoundDataField DataFieldName="BlackListAs" Key="BlackListAs">
-                                <Header Text="BlackListAs">
-                                </Header>
-                            </ig:BoundDataField>
-                            <ig:BoundDataField DataFieldName="BlackListedBy" Key="BlackListedBy">
-                                <Header Text="BlackListedBy">
-                                </Header>
-                            </ig:BoundDataField>
-                            <ig:BoundDataField DataFieldName="BlackListDate" Key="BlackListDate">
-                                <Header Text="BlackListDate">
-                                </Header>
-                            </ig:BoundDataField>
+                    <div class="col-lg-12">
+                        <ig:WebDataGrid ID="webDataGrid_MonthRecovery" runat="server"  AutoGenerateColumns="False"  DefaultColumnWidth="170px" >
+                            <Columns>
+                                <ig:BoundDataField DataFieldName="CNIC" Key="CNIC">
+                                    <Header Text="CNIC">
+                                    </Header>
+                                </ig:BoundDataField>
+                                <ig:BoundDataField DataFieldName="Name" Key="Name">
+                                    <Header Text="Name">
+                                    </Header>
+                                </ig:BoundDataField>
+                                
+                               
+                                <ig:BoundDataField DataFieldName="EngineNumber" Key="EngineNumber">
+                                    <Header Text="Engine No">
+                                    </Header>
+                                </ig:BoundDataField>
 
-                        </Columns>
+                               <ig:BoundDataField DataFieldName="PayedAmount" Key="PayedAmount">
+                                    <Header Text="Payed Amount">
+                                    </Header>
+                                </ig:BoundDataField>
+                                <ig:BoundDataField DataFieldName="InstallmentAmount" Key="InstallmentAmount">
+                                    <Header Text="Due Amount">
+                                    </Header>
+                                </ig:BoundDataField>
+
+                                <ig:BoundDataField DataFieldName="PaymentDate" Key="PaymentDate">
+                                    <Header Text="PaymentDate">
+                                    </Header>
+                                </ig:BoundDataField>
+
+                                <ig:BoundDataField DataFieldName="ReceivedBy" Key="ReceivedBy">
+                                    <Header Text="ReceivedBy">
+                                    </Header>
+                                </ig:BoundDataField>
+                               
+                            </Columns>
+                        
                                      
-                     </ig:WebDataGrid>
+                         </ig:WebDataGrid>
                    
-              </div>
-                       </div>
+                       
+                   
+                  </div>
+           </div>
              
         </div>
     

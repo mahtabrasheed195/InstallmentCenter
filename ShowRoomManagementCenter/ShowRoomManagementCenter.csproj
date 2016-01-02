@@ -86,6 +86,7 @@
     <Content Include="InstallmentReceipt.aspx" />
     <Content Include="installmentsubmission.aspx" />
     <Content Include="InstallmentSubmit.aspx" />
+    <Content Include="MonthlyRecovery.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="searchForm.aspx" />
     <Content Include="sellmotorcycle.aspx" />
@@ -184,6 +185,13 @@
       <DependentUpon>InstallmentSubmit.aspx</DependentUpon>
     </Compile>
     <Compile Include="InstallmentTable.cs" />
+    <Compile Include="MonthlyRecovery.aspx.cs">
+      <DependentUpon>MonthlyRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MonthlyRecovery.aspx.designer.cs">
+      <DependentUpon>MonthlyRecovery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PrintHelper.cs" />
     <Compile Include="PrintInstallment.cs">
       <DependentUpon>ShowRoomModel.tt</DependentUpon>
@@ -247,6 +255,9 @@
     <Compile Include="v_InstallmentDetail.cs">
       <DependentUpon>ShowRoomModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_Recovery.cs">
+      <DependentUpon>ShowRoomModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_SearchOverAll_Showroom.cs">
       <DependentUpon>ShowRoomModel.tt</DependentUpon>
     </Compile>
@@ -296,16 +307,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:57652/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

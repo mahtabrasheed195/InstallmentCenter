@@ -22,6 +22,24 @@ namespace ShowRoomManagementCenter {
         protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// webDDL_Months control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown webDDL_Months;
+        
+        /// <summary>
         /// lblSuccess control.
         /// </summary>
         /// <remarks>
@@ -31,21 +49,12 @@ namespace ShowRoomManagementCenter {
         protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
-        /// lblStatus control.
+        /// webDataGrid_MonthRecovery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
-        
-        /// <summary>
-        /// webDataGrid_BlackListedUsers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Infragistics.Web.UI.GridControls.WebDataGrid webDataGrid_BlackListedUsers;
+        protected global::Infragistics.Web.UI.GridControls.WebDataGrid webDataGrid_MonthRecovery;
     }
 }

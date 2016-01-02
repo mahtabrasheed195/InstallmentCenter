@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ShowRoomManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="ShowRoomManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ShowRoomManagementModelStoreContainer">
-    <EntitySet Name="BlackListedUsers" EntityType="ShowRoomManagementModel.Store.BlackListedUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Buyer" EntityType="ShowRoomManagementModel.Store.Buyer" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Guarantor" EntityType="ShowRoomManagementModel.Store.Guarantor" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Installment" EntityType="ShowRoomManagementModel.Store.Installment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="PrintInstallment" EntityType="ShowRoomManagementModel.Store.PrintInstallment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="TempInstallment" EntityType="ShowRoomManagementModel.Store.TempInstallment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Transactions" EntityType="ShowRoomManagementModel.Store.Transactions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Vehicle" EntityType="ShowRoomManagementModel.Store.Vehicle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="v_InstallmentDetail" EntityType="ShowRoomManagementModel.Store.v_InstallmentDetail" store:Type="Views" store:Schema="dbo" store:Name="v_InstallmentDetail" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+    <EntitySet Name="BlackListedUsers" EntityType="ShowRoomManagementModel.Store.BlackListedUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Buyer" EntityType="ShowRoomManagementModel.Store.Buyer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Guarantor" EntityType="ShowRoomManagementModel.Store.Guarantor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Installment" EntityType="ShowRoomManagementModel.Store.Installment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PrintInstallment" EntityType="ShowRoomManagementModel.Store.PrintInstallment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TempInstallment" EntityType="ShowRoomManagementModel.Store.TempInstallment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transactions" EntityType="ShowRoomManagementModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vehicle" EntityType="ShowRoomManagementModel.Store.Vehicle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="v_InstallmentDetail" EntityType="ShowRoomManagementModel.Store.v_InstallmentDetail" store:Type="Views" store:Schema="dbo" store:Name="v_InstallmentDetail">
       <DefiningQuery>SELECT 
       [v_InstallmentDetail].[TransactionId] AS [TransactionId], 
       [v_InstallmentDetail].[VehicleID] AS [VehicleID], 
@@ -54,7 +54,52 @@
       [v_InstallmentDetail].[bCreationDate] AS [bCreationDate]
       FROM [dbo].[v_InstallmentDetail] AS [v_InstallmentDetail]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="v_SearchOverAll" EntityType="ShowRoomManagementModel.Store.v_SearchOverAll" store:Type="Views" store:Schema="dbo" store:Name="v_SearchOverAll" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+    <EntitySet Name="v_Recovery" EntityType="ShowRoomManagementModel.Store.v_Recovery" store:Type="Views" store:Schema="dbo" store:Name="v_Recovery">
+      <DefiningQuery>SELECT 
+      [v_Recovery].[CNIC] AS [CNIC], 
+      [v_Recovery].[Name] AS [Name], 
+      [v_Recovery].[FatherName] AS [FatherName], 
+      [v_Recovery].[Address] AS [Address], 
+      [v_Recovery].[PhoneNumber] AS [PhoneNumber], 
+      [v_Recovery].[PhoneNumber2] AS [PhoneNumber2], 
+      [v_Recovery].[CreditRating] AS [CreditRating], 
+      [v_Recovery].[BCreationDate] AS [BCreationDate], 
+      [v_Recovery].[T_TransactionId] AS [T_TransactionId], 
+      [v_Recovery].[VehicleID] AS [VehicleID], 
+      [v_Recovery].[BuyerCNIC] AS [BuyerCNIC], 
+      [v_Recovery].[TransactionDate] AS [TransactionDate], 
+      [v_Recovery].[TRemarks] AS [TRemarks], 
+      [v_Recovery].[GuarantorCNIC] AS [GuarantorCNIC], 
+      [v_Recovery].[Price] AS [Price], 
+      [v_Recovery].[AdvanceAmount] AS [AdvanceAmount], 
+      [v_Recovery].[Id] AS [Id], 
+      [v_Recovery].[EngineNumber] AS [EngineNumber], 
+      [v_Recovery].[ChasisNumber] AS [ChasisNumber], 
+      [v_Recovery].[Model] AS [Model], 
+      [v_Recovery].[CC] AS [CC], 
+      [v_Recovery].[VRemarks] AS [VRemarks], 
+      [v_Recovery].[VCreationDate] AS [VCreationDate], 
+      [v_Recovery].[RegistrationNo] AS [RegistrationNo], 
+      [v_Recovery].[IsOld] AS [IsOld], 
+      [v_Recovery].[InstallmentID] AS [InstallmentID], 
+      [v_Recovery].[InstallmentNumber] AS [InstallmentNumber], 
+      [v_Recovery].[InstallmentAmount] AS [InstallmentAmount], 
+      [v_Recovery].[Month] AS [Month], 
+      [v_Recovery].[Year] AS [Year], 
+      [v_Recovery].[DueDateStart] AS [DueDateStart], 
+      [v_Recovery].[DueDateEnd] AS [DueDateEnd], 
+      [v_Recovery].[PaymentDate] AS [PaymentDate], 
+      [v_Recovery].[PayedAmount] AS [PayedAmount], 
+      [v_Recovery].[Late] AS [Late], 
+      [v_Recovery].[ReceivedBy] AS [ReceivedBy], 
+      [v_Recovery].[TotalAmountPayed] AS [TotalAmountPayed], 
+      [v_Recovery].[TotalAmountRemaining] AS [TotalAmountRemaining], 
+      [v_Recovery].[CreationDate] AS [CreationDate], 
+      [v_Recovery].[TransactionID] AS [TransactionID], 
+      [v_Recovery].[IsPayed] AS [IsPayed]
+      FROM [dbo].[v_Recovery] AS [v_Recovery]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_SearchOverAll" EntityType="ShowRoomManagementModel.Store.v_SearchOverAll" store:Type="Views" store:Schema="dbo" store:Name="v_SearchOverAll">
       <DefiningQuery>SELECT 
       [v_SearchOverAll].[CNIC] AS [CNIC], 
       [v_SearchOverAll].[Name] AS [Name], 
@@ -90,7 +135,7 @@
       [v_SearchOverAll].[IsOld] AS [IsOld]
       FROM [dbo].[v_SearchOverAll] AS [v_SearchOverAll]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="v_SearchOverAll_Showroom" EntityType="ShowRoomManagementModel.Store.v_SearchOverAll_Showroom" store:Type="Views" store:Schema="dbo" store:Name="v_SearchOverAll_Showroom" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+    <EntitySet Name="v_SearchOverAll_Showroom" EntityType="ShowRoomManagementModel.Store.v_SearchOverAll_Showroom" store:Type="Views" store:Schema="dbo" store:Name="v_SearchOverAll_Showroom">
       <DefiningQuery>SELECT 
       [v_SearchOverAll_Showroom].[CNIC] AS [CNIC], 
       [v_SearchOverAll_Showroom].[Name] AS [Name], 
@@ -216,11 +261,11 @@
     <Property Name="InstallmentAmount" Type="money" Nullable="false" />
     <Property Name="Month" Type="varchar" MaxLength="50" />
     <Property Name="Year" Type="varchar" MaxLength="50" />
-    <Property Name="DueDateStart" Type="datetime" />
-    <Property Name="DueDateEnd" Type="datetime" />
-    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="DueDateStart" Type="date" />
+    <Property Name="DueDateEnd" Type="date" />
+    <Property Name="PaymentDate" Type="date" />
     <Property Name="PayedAmount" Type="money" />
-    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="CreationDate" Type="date" Nullable="false" />
     <Property Name="TransactionID" Type="int" />
   </EntityType>
   <EntityType Name="Transactions">
@@ -230,7 +275,7 @@
     <Property Name="TransactionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="VehicleID" Type="int" />
     <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
-    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionDate" Type="date" Nullable="false" />
     <Property Name="Remarks" Type="varchar" MaxLength="250" />
     <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
     <Property Name="Price" Type="money" />
@@ -273,7 +318,7 @@
     <Property Name="TransactionId" Type="int" Nullable="false" />
     <Property Name="VehicleID" Type="int" />
     <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
-    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionDate" Type="date" Nullable="false" />
     <Property Name="Remarks" Type="varchar" MaxLength="250" />
     <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
     <Property Name="Price" Type="money" />
@@ -313,6 +358,68 @@
     <Property Name="bCreationDate" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
+      warning 6002: The table/view 'ShowRoomManagement.dbo.v_Recovery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_Recovery">
+    <Key>
+      <PropertyRef Name="CNIC" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="T_TransactionId" />
+      <PropertyRef Name="BuyerCNIC" />
+      <PropertyRef Name="TransactionDate" />
+      <PropertyRef Name="GuarantorCNIC" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ChasisNumber" />
+      <PropertyRef Name="InstallmentID" />
+      <PropertyRef Name="InstallmentNumber" />
+      <PropertyRef Name="InstallmentAmount" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="FatherName" Type="varchar" MaxLength="150" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PhoneNumber2" Type="varchar" MaxLength="20" />
+    <Property Name="CreditRating" Type="varchar" MaxLength="50" />
+    <Property Name="BCreationDate" Type="datetime" />
+    <Property Name="T_TransactionId" Type="int" Nullable="false" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="TransactionDate" Type="date" Nullable="false" />
+    <Property Name="TRemarks" Type="varchar" MaxLength="250" />
+    <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="Price" Type="money" />
+    <Property Name="AdvanceAmount" Type="money" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EngineNumber" Type="varchar" MaxLength="50" />
+    <Property Name="ChasisNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Model" Type="varchar" MaxLength="50" />
+    <Property Name="CC" Type="varchar" MaxLength="50" />
+    <Property Name="VRemarks" Type="varchar" MaxLength="150" />
+    <Property Name="VCreationDate" Type="datetime" />
+    <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+    <Property Name="IsOld" Type="bit" />
+    <Property Name="InstallmentID" Type="int" Nullable="false" />
+    <Property Name="InstallmentNumber" Type="int" Nullable="false" />
+    <Property Name="InstallmentAmount" Type="money" Nullable="false" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="Year" Type="varchar" MaxLength="50" />
+    <Property Name="DueDateStart" Type="datetime" />
+    <Property Name="DueDateEnd" Type="datetime" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="PayedAmount" Type="money" />
+    <Property Name="Late" Type="bit" />
+    <Property Name="ReceivedBy" Type="varchar" MaxLength="150" />
+    <Property Name="TotalAmountPayed" Type="money" />
+    <Property Name="TotalAmountRemaining" Type="money" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionID" Type="int" Nullable="false" />
+    <Property Name="IsPayed" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
       warning 6002: The table/view 'ShowRoomManagement.dbo.v_SearchOverAll' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="v_SearchOverAll">
@@ -323,6 +430,7 @@
       <PropertyRef Name="GCNIC" />
       <PropertyRef Name="GName" />
       <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="VehicleID" />
       <PropertyRef Name="BuyerCNIC" />
       <PropertyRef Name="TransactionDate" />
       <PropertyRef Name="GuarantorCNIC" />
@@ -345,9 +453,9 @@
     <Property Name="Remarks" Type="varchar" MaxLength="250" />
     <Property Name="GCreationDate" Type="datetime" />
     <Property Name="TransactionId" Type="int" Nullable="false" />
-    <Property Name="VehicleID" Type="int" />
+    <Property Name="VehicleID" Type="int" Nullable="false" />
     <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
-    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionDate" Type="date" Nullable="false" />
     <Property Name="TRemarks" Type="varchar" MaxLength="250" />
     <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
     <Property Name="Price" Type="money" />
@@ -373,12 +481,12 @@
       <PropertyRef Name="GCNIC" />
       <PropertyRef Name="GName" />
       <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="VehicleID" />
       <PropertyRef Name="BuyerCNIC" />
       <PropertyRef Name="TransactionDate" />
       <PropertyRef Name="GuarantorCNIC" />
       <PropertyRef Name="Id" />
       <PropertyRef Name="ChasisNumber" />
-      <PropertyRef Name="VehicleID" />
     </Key>
     <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
     <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
@@ -398,7 +506,7 @@
     <Property Name="TransactionId" Type="int" Nullable="false" />
     <Property Name="VehicleID" Type="int" Nullable="false" />
     <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
-    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionDate" Type="date" Nullable="false" />
     <Property Name="TRemarks" Type="varchar" MaxLength="250" />
     <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
     <Property Name="Price" Type="money" />

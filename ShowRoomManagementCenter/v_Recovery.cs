@@ -12,8 +12,33 @@ namespace ShowRoomManagementCenter
     using System;
     using System.Collections.Generic;
     
-    public partial class Installment
+    public partial class v_Recovery
     {
+        public string CNIC { get; set; }
+        public string Name { get; set; }
+        public string FatherName { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        public string PhoneNumber2 { get; set; }
+        public string CreditRating { get; set; }
+        public Nullable<System.DateTime> BCreationDate { get; set; }
+        public int T_TransactionId { get; set; }
+        public Nullable<int> VehicleID { get; set; }
+        public string BuyerCNIC { get; set; }
+        public System.DateTime TransactionDate { get; set; }
+        public string TRemarks { get; set; }
+        public string GuarantorCNIC { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public Nullable<decimal> AdvanceAmount { get; set; }
+        public int Id { get; set; }
+        public string EngineNumber { get; set; }
+        public string ChasisNumber { get; set; }
+        public string Model { get; set; }
+        public string CC { get; set; }
+        public string VRemarks { get; set; }
+        public Nullable<System.DateTime> VCreationDate { get; set; }
+        public string RegistrationNo { get; set; }
+        public Nullable<bool> IsOld { get; set; }
         public int InstallmentID { get; set; }
         public int InstallmentNumber { get; set; }
         public decimal InstallmentAmount { get; set; }

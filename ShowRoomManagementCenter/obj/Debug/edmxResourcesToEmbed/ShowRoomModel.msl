@@ -215,5 +215,52 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="v_Recovery">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.v_Recovery">
+        <MappingFragment StoreEntitySet="v_Recovery">
+          <ScalarProperty Name="IsPayed" ColumnName="IsPayed" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="TotalAmountRemaining" ColumnName="TotalAmountRemaining" />
+          <ScalarProperty Name="TotalAmountPayed" ColumnName="TotalAmountPayed" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="Late" ColumnName="Late" />
+          <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+          <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+          <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+          <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+          <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="VCreationDate" ColumnName="VCreationDate" />
+          <ScalarProperty Name="VRemarks" ColumnName="VRemarks" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+          <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+          <ScalarProperty Name="TRemarks" ColumnName="TRemarks" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="T_TransactionId" ColumnName="T_TransactionId" />
+          <ScalarProperty Name="BCreationDate" ColumnName="BCreationDate" />
+          <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

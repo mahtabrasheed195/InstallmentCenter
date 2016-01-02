@@ -35,5 +35,6 @@ namespace ShowRoomManagementCenter
         public DbSet<v_SearchOverAll_Showroom> v_SearchOverAll_Showroom { get; set; }
         public DbSet<v_InstallmentDetail> v_InstallmentDetail { get; set; }
         public DbSet<BlackListedUser> BlackListedUsers { get; set; }
+        public DbSet<v_Recovery> v_Recovery { get; set; }
     }
 }
