@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ShowRoomManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ShowRoomManagementModelStoreContainer">
+          <EntitySet Name="BlackListedUsers" EntityType="ShowRoomManagementModel.Store.BlackListedUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Buyer" EntityType="ShowRoomManagementModel.Store.Buyer" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Guarantor" EntityType="ShowRoomManagementModel.Store.Guarantor" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Installment" EntityType="ShowRoomManagementModel.Store.Installment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PrintInstallment" EntityType="ShowRoomManagementModel.Store.PrintInstallment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TempInstallment" EntityType="ShowRoomManagementModel.Store.TempInstallment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Transactions" EntityType="ShowRoomManagementModel.Store.Transactions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Vehicle" EntityType="ShowRoomManagementModel.Store.Vehicle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="v_InstallmentDetail" EntityType="ShowRoomManagementModel.Store.v_InstallmentDetail" store:Type="Views" store:Schema="dbo" store:Name="v_InstallmentDetail" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [v_InstallmentDetail].[TransactionId] AS [TransactionId], 
+      [v_InstallmentDetail].[VehicleID] AS [VehicleID], 
+      [v_InstallmentDetail].[BuyerCNIC] AS [BuyerCNIC], 
+      [v_InstallmentDetail].[TransactionDate] AS [TransactionDate], 
+      [v_InstallmentDetail].[Remarks] AS [Remarks], 
+      [v_InstallmentDetail].[GuarantorCNIC] AS [GuarantorCNIC], 
+      [v_InstallmentDetail].[Price] AS [Price], 
+      [v_InstallmentDetail].[AdvanceAmount] AS [AdvanceAmount], 
+      [v_InstallmentDetail].[InstallmentID] AS [InstallmentID], 
+      [v_InstallmentDetail].[InstallmentNumber] AS [InstallmentNumber], 
+      [v_InstallmentDetail].[InstallmentAmount] AS [InstallmentAmount], 
+      [v_InstallmentDetail].[Month] AS [Month], 
+      [v_InstallmentDetail].[Year] AS [Year], 
+      [v_InstallmentDetail].[DueDateStart] AS [DueDateStart], 
+      [v_InstallmentDetail].[DueDateEnd] AS [DueDateEnd], 
+      [v_InstallmentDetail].[PaymentDate] AS [PaymentDate], 
+      [v_InstallmentDetail].[PayedAmount] AS [PayedAmount], 
+      [v_InstallmentDetail].[Late] AS [Late], 
+      [v_InstallmentDetail].[ReceivedBy] AS [ReceivedBy], 
+      [v_InstallmentDetail].[TotalAmountPayed] AS [TotalAmountPayed], 
+      [v_InstallmentDetail].[TotalAmountRemaining] AS [TotalAmountRemaining], 
+      [v_InstallmentDetail].[CreationDate] AS [CreationDate], 
+      [v_InstallmentDetail].[InstaTransactionID] AS [InstaTransactionID], 
+      [v_InstallmentDetail].[IsPayed] AS [IsPayed], 
+      [v_InstallmentDetail].[Id] AS [Id], 
+      [v_InstallmentDetail].[EngineNumber] AS [EngineNumber], 
+      [v_InstallmentDetail].[ChasisNumber] AS [ChasisNumber], 
+      [v_InstallmentDetail].[Model] AS [Model], 
+      [v_InstallmentDetail].[CC] AS [CC], 
+      [v_InstallmentDetail].[vRemarks] AS [vRemarks], 
+      [v_InstallmentDetail].[vCreationDate] AS [vCreationDate], 
+      [v_InstallmentDetail].[RegistrationNo] AS [RegistrationNo], 
+      [v_InstallmentDetail].[IsOld] AS [IsOld], 
+      [v_InstallmentDetail].[CNIC] AS [CNIC], 
+      [v_InstallmentDetail].[Name] AS [Name], 
+      [v_InstallmentDetail].[FatherName] AS [FatherName], 
+      [v_InstallmentDetail].[Address] AS [Address], 
+      [v_InstallmentDetail].[PhoneNumber] AS [PhoneNumber], 
+      [v_InstallmentDetail].[PhoneNumber2] AS [PhoneNumber2], 
+      [v_InstallmentDetail].[CreditRating] AS [CreditRating], 
+      [v_InstallmentDetail].[bCreationDate] AS [bCreationDate]
+      FROM [dbo].[v_InstallmentDetail] AS [v_InstallmentDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_SearchOverAll" EntityType="ShowRoomManagementModel.Store.v_SearchOverAll" store:Type="Views" store:Schema="dbo" store:Name="v_SearchOverAll" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [v_SearchOverAll].[CNIC] AS [CNIC], 
+      [v_SearchOverAll].[Name] AS [Name], 
+      [v_SearchOverAll].[FatherName] AS [FatherName], 
+      [v_SearchOverAll].[Address] AS [Address], 
+      [v_SearchOverAll].[PhoneNumber] AS [PhoneNumber], 
+      [v_SearchOverAll].[PhoneNumber2] AS [PhoneNumber2], 
+      [v_SearchOverAll].[CreditRating] AS [CreditRating], 
+      [v_SearchOverAll].[CreationDate] AS [CreationDate], 
+      [v_SearchOverAll].[GCNIC] AS [GCNIC], 
+      [v_SearchOverAll].[GName] AS [GName], 
+      [v_SearchOverAll].[GFatherName] AS [GFatherName], 
+      [v_SearchOverAll].[GAddress] AS [GAddress], 
+      [v_SearchOverAll].[GPhoneNumber] AS [GPhoneNumber], 
+      [v_SearchOverAll].[Remarks] AS [Remarks], 
+      [v_SearchOverAll].[GCreationDate] AS [GCreationDate], 
+      [v_SearchOverAll].[TransactionId] AS [TransactionId], 
+      [v_SearchOverAll].[VehicleID] AS [VehicleID], 
+      [v_SearchOverAll].[BuyerCNIC] AS [BuyerCNIC], 
+      [v_SearchOverAll].[TransactionDate] AS [TransactionDate], 
+      [v_SearchOverAll].[TRemarks] AS [TRemarks], 
+      [v_SearchOverAll].[GuarantorCNIC] AS [GuarantorCNIC], 
+      [v_SearchOverAll].[Price] AS [Price], 
+      [v_SearchOverAll].[AdvanceAmount] AS [AdvanceAmount], 
+      [v_SearchOverAll].[Id] AS [Id], 
+      [v_SearchOverAll].[EngineNumber] AS [EngineNumber], 
+      [v_SearchOverAll].[ChasisNumber] AS [ChasisNumber], 
+      [v_SearchOverAll].[Model] AS [Model], 
+      [v_SearchOverAll].[CC] AS [CC], 
+      [v_SearchOverAll].[VRemarks] AS [VRemarks], 
+      [v_SearchOverAll].[VCreationDate] AS [VCreationDate], 
+      [v_SearchOverAll].[RegistrationNo] AS [RegistrationNo], 
+      [v_SearchOverAll].[IsOld] AS [IsOld]
+      FROM [dbo].[v_SearchOverAll] AS [v_SearchOverAll]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_SearchOverAll_Showroom" EntityType="ShowRoomManagementModel.Store.v_SearchOverAll_Showroom" store:Type="Views" store:Schema="dbo" store:Name="v_SearchOverAll_Showroom" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [v_SearchOverAll_Showroom].[CNIC] AS [CNIC], 
+      [v_SearchOverAll_Showroom].[Name] AS [Name], 
+      [v_SearchOverAll_Showroom].[FatherName] AS [FatherName], 
+      [v_SearchOverAll_Showroom].[Address] AS [Address], 
+      [v_SearchOverAll_Showroom].[PhoneNumber] AS [PhoneNumber], 
+      [v_SearchOverAll_Showroom].[PhoneNumber2] AS [PhoneNumber2], 
+      [v_SearchOverAll_Showroom].[CreditRating] AS [CreditRating], 
+      [v_SearchOverAll_Showroom].[CreationDate] AS [CreationDate], 
+      [v_SearchOverAll_Showroom].[GCNIC] AS [GCNIC], 
+      [v_SearchOverAll_Showroom].[GName] AS [GName], 
+      [v_SearchOverAll_Showroom].[GFatherName] AS [GFatherName], 
+      [v_SearchOverAll_Showroom].[GAddress] AS [GAddress], 
+      [v_SearchOverAll_Showroom].[GPhoneNumber] AS [GPhoneNumber], 
+      [v_SearchOverAll_Showroom].[Remarks] AS [Remarks], 
+      [v_SearchOverAll_Showroom].[GCreationDate] AS [GCreationDate], 
+      [v_SearchOverAll_Showroom].[TransactionId] AS [TransactionId], 
+      [v_SearchOverAll_Showroom].[VehicleID] AS [VehicleID], 
+      [v_SearchOverAll_Showroom].[BuyerCNIC] AS [BuyerCNIC], 
+      [v_SearchOverAll_Showroom].[TransactionDate] AS [TransactionDate], 
+      [v_SearchOverAll_Showroom].[TRemarks] AS [TRemarks], 
+      [v_SearchOverAll_Showroom].[GuarantorCNIC] AS [GuarantorCNIC], 
+      [v_SearchOverAll_Showroom].[Price] AS [Price], 
+      [v_SearchOverAll_Showroom].[AdvanceAmount] AS [AdvanceAmount], 
+      [v_SearchOverAll_Showroom].[Id] AS [Id], 
+      [v_SearchOverAll_Showroom].[EngineNumber] AS [EngineNumber], 
+      [v_SearchOverAll_Showroom].[ChasisNumber] AS [ChasisNumber], 
+      [v_SearchOverAll_Showroom].[Model] AS [Model], 
+      [v_SearchOverAll_Showroom].[CC] AS [CC], 
+      [v_SearchOverAll_Showroom].[VRemarks] AS [VRemarks], 
+      [v_SearchOverAll_Showroom].[VCreationDate] AS [VCreationDate], 
+      [v_SearchOverAll_Showroom].[RegistrationNo] AS [RegistrationNo], 
+      [v_SearchOverAll_Showroom].[IsOld] AS [IsOld]
+      FROM [dbo].[v_SearchOverAll_Showroom] AS [v_SearchOverAll_Showroom]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="BlackListedUsers">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Reason" Type="varchar" MaxLength="5000" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="BlackListAs" Type="varchar" MaxLength="150" />
+          <Property Name="BlackListedBy" Type="varchar" MaxLength="50" />
+          <Property Name="BlackListDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Buyer">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="FatherName" Type="varchar" MaxLength="150" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PhoneNumber2" Type="varchar" MaxLength="20" />
+          <Property Name="CreditRating" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Guarantor">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="FatherName" Type="varchar" MaxLength="150" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Installment">
+          <Key>
+            <PropertyRef Name="InstallmentID" />
+            <PropertyRef Name="InstallmentNumber" />
+          </Key>
+          <Property Name="InstallmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InstallmentNumber" Type="int" Nullable="false" />
+          <Property Name="InstallmentAmount" Type="money" Nullable="false" />
+          <Property Name="Month" Type="varchar" MaxLength="50" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+          <Property Name="DueDateStart" Type="datetime" />
+          <Property Name="DueDateEnd" Type="datetime" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PayedAmount" Type="money" />
+          <Property Name="Late" Type="bit" />
+          <Property Name="ReceivedBy" Type="varchar" MaxLength="150" />
+          <Property Name="TotalAmountPayed" Type="money" />
+          <Property Name="TotalAmountRemaining" Type="money" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="IsPayed" Type="bit" />
+        </EntityType>
+        <EntityType Name="PrintInstallment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PrintDate" Type="datetime" />
+          <Property Name="InstallmentNumber" Type="int" />
+          <Property Name="InstallmentAmountPayable" Type="money" />
+          <Property Name="InstallmentAmountPayed" Type="money" />
+          <Property Name="Price" Type="money" />
+          <Property Name="TotalAmountPayedTill" Type="money" />
+          <Property Name="AdvanceAmount" Type="money" />
+          <Property Name="TotalAmountPayedbyInstallment" Type="money" />
+          <Property Name="TotalRemainingAmount" Type="money" />
+          <Property Name="NextInstallmentDueDate" Type="datetime" />
+          <Property Name="Comments" Type="varchar" MaxLength="150" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="150" />
+          <Property Name="CustomerCNIC" Type="varchar" MaxLength="50" />
+          <Property Name="EnginerNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ChasisNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TempInstallment">
+          <Key>
+            <PropertyRef Name="InstallmentID" />
+            <PropertyRef Name="InstallmentNumber" />
+          </Key>
+          <Property Name="InstallmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InstallmentNumber" Type="int" Nullable="false" />
+          <Property Name="InstallmentAmount" Type="money" Nullable="false" />
+          <Property Name="Month" Type="varchar" MaxLength="50" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+          <Property Name="DueDateStart" Type="datetime" />
+          <Property Name="DueDateEnd" Type="datetime" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PayedAmount" Type="money" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="TransactionID" Type="int" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Price" Type="money" />
+          <Property Name="AdvanceAmount" Type="money" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EngineNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ChasisNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="CC" Type="varchar" MaxLength="50" />
+          <Property Name="Remarks" Type="varchar" MaxLength="150" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+          <Property Name="IsOld" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ShowRoomManagement.dbo.v_InstallmentDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_InstallmentDetail">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="BuyerCNIC" />
+            <PropertyRef Name="TransactionDate" />
+            <PropertyRef Name="GuarantorCNIC" />
+            <PropertyRef Name="InstallmentID" />
+            <PropertyRef Name="InstallmentNumber" />
+            <PropertyRef Name="InstallmentAmount" />
+            <PropertyRef Name="CreationDate" />
+            <PropertyRef Name="InstaTransactionID" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ChasisNumber" />
+            <PropertyRef Name="CNIC" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+          </Key>
+          <Property Name="TransactionId" Type="int" Nullable="false" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Price" Type="money" />
+          <Property Name="AdvanceAmount" Type="money" />
+          <Property Name="InstallmentID" Type="int" Nullable="false" />
+          <Property Name="InstallmentNumber" Type="int" Nullable="false" />
+          <Property Name="InstallmentAmount" Type="money" Nullable="false" />
+          <Property Name="Month" Type="varchar" MaxLength="50" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+          <Property Name="DueDateStart" Type="datetime" />
+          <Property Name="DueDateEnd" Type="datetime" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PayedAmount" Type="money" />
+          <Property Name="Late" Type="bit" />
+          <Property Name="ReceivedBy" Type="varchar" MaxLength="150" />
+          <Property Name="TotalAmountPayed" Type="money" />
+          <Property Name="TotalAmountRemaining" Type="money" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="InstaTransactionID" Type="int" Nullable="false" />
+          <Property Name="IsPayed" Type="bit" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="EngineNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ChasisNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="CC" Type="varchar" MaxLength="50" />
+          <Property Name="vRemarks" Type="varchar" MaxLength="150" />
+          <Property Name="vCreationDate" Type="datetime" />
+          <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+          <Property Name="IsOld" Type="bit" />
+          <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="FatherName" Type="varchar" MaxLength="150" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PhoneNumber2" Type="varchar" MaxLength="20" />
+          <Property Name="CreditRating" Type="varchar" MaxLength="50" />
+          <Property Name="bCreationDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ShowRoomManagement.dbo.v_SearchOverAll' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_SearchOverAll">
+          <Key>
+            <PropertyRef Name="CNIC" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="GCNIC" />
+            <PropertyRef Name="GName" />
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="BuyerCNIC" />
+            <PropertyRef Name="TransactionDate" />
+            <PropertyRef Name="GuarantorCNIC" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ChasisNumber" />
+          </Key>
+          <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="FatherName" Type="varchar" MaxLength="150" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PhoneNumber2" Type="varchar" MaxLength="20" />
+          <Property Name="CreditRating" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="GCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="GName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="GFatherName" Type="varchar" MaxLength="150" />
+          <Property Name="GAddress" Type="varchar" MaxLength="250" />
+          <Property Name="GPhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="GCreationDate" Type="datetime" />
+          <Property Name="TransactionId" Type="int" Nullable="false" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="TRemarks" Type="varchar" MaxLength="250" />
+          <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Price" Type="money" />
+          <Property Name="AdvanceAmount" Type="money" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="EngineNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ChasisNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="CC" Type="varchar" MaxLength="50" />
+          <Property Name="VRemarks" Type="varchar" MaxLength="150" />
+          <Property Name="VCreationDate" Type="datetime" />
+          <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+          <Property Name="IsOld" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ShowRoomManagement.dbo.v_SearchOverAll_Showroom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_SearchOverAll_Showroom">
+          <Key>
+            <PropertyRef Name="CNIC" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="GCNIC" />
+            <PropertyRef Name="GName" />
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="BuyerCNIC" />
+            <PropertyRef Name="TransactionDate" />
+            <PropertyRef Name="GuarantorCNIC" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ChasisNumber" />
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="CNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="FatherName" Type="varchar" MaxLength="150" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PhoneNumber2" Type="varchar" MaxLength="20" />
+          <Property Name="CreditRating" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="GCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="GName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="GFatherName" Type="varchar" MaxLength="150" />
+          <Property Name="GAddress" Type="varchar" MaxLength="250" />
+          <Property Name="GPhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="GCreationDate" Type="datetime" />
+          <Property Name="TransactionId" Type="int" Nullable="false" />
+          <Property Name="VehicleID" Type="int" Nullable="false" />
+          <Property Name="BuyerCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="TRemarks" Type="varchar" MaxLength="250" />
+          <Property Name="GuarantorCNIC" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Price" Type="money" />
+          <Property Name="AdvanceAmount" Type="money" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="EngineNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ChasisNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="CC" Type="varchar" MaxLength="50" />
+          <Property Name="VRemarks" Type="varchar" MaxLength="150" />
+          <Property Name="VCreationDate" Type="datetime" />
+          <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+          <Property Name="IsOld" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShowRoomManagementModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ShowRoomManagementEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Buyers" EntityType="ShowRoomManagementModel.Buyer" />
+          <EntitySet Name="Guarantors" EntityType="ShowRoomManagementModel.Guarantor" />
+          <EntitySet Name="Vehicles" EntityType="ShowRoomManagementModel.Vehicle" />
+          <EntitySet Name="Installments" EntityType="ShowRoomManagementModel.Installment" />
+          <EntitySet Name="TempInstallments" EntityType="ShowRoomManagementModel.TempInstallment" />
+          <EntitySet Name="Transactions" EntityType="ShowRoomManagementModel.Transaction" />
+          <EntitySet Name="PrintInstallments" EntityType="ShowRoomManagementModel.PrintInstallment" />
+          <EntitySet Name="v_SearchOverAll_Showroom" EntityType="ShowRoomManagementModel.v_SearchOverAll_Showroom" />
+          <EntitySet Name="v_InstallmentDetail" EntityType="ShowRoomManagementModel.v_InstallmentDetail" />
+          <EntitySet Name="BlackListedUsers" EntityType="ShowRoomManagementModel.BlackListedUser" />
+          </EntityContainer>
+        <EntityType Name="Buyer">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="FatherName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNumber2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CreditRating" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Guarantor">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="FatherName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EngineNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ChasisNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CC" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsOld" />
+        </EntityType>
+        <EntityType Name="Installment">
+          <Key>
+            <PropertyRef Name="InstallmentID" />
+            <PropertyRef Name="InstallmentNumber" />
+          </Key>
+          <Property Type="Int32" Name="InstallmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="InstallmentNumber" Nullable="false" />
+          <Property Type="Decimal" Name="InstallmentAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Month" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Year" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DueDateStart" Precision="3" />
+          <Property Type="DateTime" Name="DueDateEnd" Precision="3" />
+          <Property Type="DateTime" Name="PaymentDate" Precision="3" />
+          <Property Type="Decimal" Name="PayedAmount" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="Late" />
+          <Property Type="String" Name="ReceivedBy" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="TotalAmountPayed" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalAmountRemaining" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="TransactionID" Nullable="false" />
+          <Property Type="Boolean" Name="IsPayed" />
+        </EntityType>
+        <EntityType Name="TempInstallment">
+          <Key>
+            <PropertyRef Name="InstallmentID" />
+            <PropertyRef Name="InstallmentNumber" />
+          </Key>
+          <Property Type="Int32" Name="InstallmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="InstallmentNumber" Nullable="false" />
+          <Property Type="Decimal" Name="InstallmentAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Month" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Year" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DueDateStart" Precision="3" />
+          <Property Type="DateTime" Name="DueDateEnd" Precision="3" />
+          <Property Type="DateTime" Name="PaymentDate" Precision="3" />
+          <Property Type="Decimal" Name="PayedAmount" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="TransactionID" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="VehicleID" />
+          <Property Type="String" Name="BuyerCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GuarantorCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="PrintInstallment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="PrintDate" Precision="3" />
+          <Property Type="Decimal" Name="InstallmentAmountPayable" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="InstallmentAmountPayed" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalAmountPayedTill" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalAmountPayedbyInstallment" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalRemainingAmount" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="NextInstallmentDueDate" Precision="3" />
+          <Property Type="String" Name="Comments" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="InstallmentNumber" />
+          <Property Type="String" Name="CustomerName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomerCNIC" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EnginerNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChasisNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_SearchOverAll_Showroom">
+          <Key>
+            <PropertyRef Name="CNIC" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="GCNIC" />
+            <PropertyRef Name="GName" />
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="VehicleID" />
+            <PropertyRef Name="BuyerCNIC" />
+            <PropertyRef Name="TransactionDate" />
+            <PropertyRef Name="GuarantorCNIC" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ChasisNumber" />
+          </Key>
+          <Property Type="String" Name="CNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FatherName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber2" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreditRating" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="String" Name="GCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GFatherName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GPhoneNumber" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="GCreationDate" Precision="3" />
+          <Property Type="Int32" Name="TransactionId" Nullable="false" />
+          <Property Type="Int32" Name="VehicleID" Nullable="false" />
+          <Property Type="String" Name="BuyerCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="TRemarks" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GuarantorCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="EngineNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChasisNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Model" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CC" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VRemarks" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="VCreationDate" Precision="3" />
+          <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsOld" />
+        </EntityType>
+        <EntityType Name="v_InstallmentDetail">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+            <PropertyRef Name="BuyerCNIC" />
+            <PropertyRef Name="TransactionDate" />
+            <PropertyRef Name="GuarantorCNIC" />
+            <PropertyRef Name="InstallmentID" />
+            <PropertyRef Name="InstallmentNumber" />
+            <PropertyRef Name="InstallmentAmount" />
+            <PropertyRef Name="CreationDate" />
+            <PropertyRef Name="InstaTransactionID" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ChasisNumber" />
+            <PropertyRef Name="CNIC" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" />
+          <Property Type="Int32" Name="VehicleID" />
+          <Property Type="String" Name="BuyerCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GuarantorCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="InstallmentID" Nullable="false" />
+          <Property Type="Int32" Name="InstallmentNumber" Nullable="false" />
+          <Property Type="Decimal" Name="InstallmentAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Month" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Year" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DueDateStart" Precision="3" />
+          <Property Type="DateTime" Name="DueDateEnd" Precision="3" />
+          <Property Type="DateTime" Name="PaymentDate" Precision="3" />
+          <Property Type="Decimal" Name="PayedAmount" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="Late" />
+          <Property Type="String" Name="ReceivedBy" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="TotalAmountPayed" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalAmountRemaining" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="InstaTransactionID" Nullable="false" />
+          <Property Type="Boolean" Name="IsPayed" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="EngineNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChasisNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Model" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CC" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vRemarks" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="vCreationDate" Precision="3" />
+          <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsOld" />
+          <Property Type="String" Name="CNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FatherName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber2" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreditRating" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="bCreationDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="BlackListedUser">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BlackListAs" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="BlackListedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BlackListDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShowRoomManagementModelStoreContainer" CdmEntityContainer="ShowRoomManagementEntities">
+          <EntitySetMapping Name="Buyers">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.Buyer">
+              <MappingFragment StoreEntitySet="Buyer">
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guarantors">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.Guarantor">
+              <MappingFragment StoreEntitySet="Guarantor">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+                <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="CC" ColumnName="CC" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Installments">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.Installment">
+              <MappingFragment StoreEntitySet="Installment">
+                <ScalarProperty Name="IsPayed" ColumnName="IsPayed" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="TotalAmountRemaining" ColumnName="TotalAmountRemaining" />
+                <ScalarProperty Name="TotalAmountPayed" ColumnName="TotalAmountPayed" />
+                <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+                <ScalarProperty Name="Late" ColumnName="Late" />
+                <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+                <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+                <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+                <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempInstallments">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.TempInstallment">
+              <MappingFragment StoreEntitySet="TempInstallment">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+                <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+                <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+                <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrintInstallments">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.PrintInstallment">
+              <MappingFragment StoreEntitySet="PrintInstallment">
+                <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+                <ScalarProperty Name="EnginerNumber" ColumnName="EnginerNumber" />
+                <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="NextInstallmentDueDate" ColumnName="NextInstallmentDueDate" />
+                <ScalarProperty Name="TotalRemainingAmount" ColumnName="TotalRemainingAmount" />
+                <ScalarProperty Name="TotalAmountPayedbyInstallment" ColumnName="TotalAmountPayedbyInstallment" />
+                <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+                <ScalarProperty Name="TotalAmountPayedTill" ColumnName="TotalAmountPayedTill" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="InstallmentAmountPayed" ColumnName="InstallmentAmountPayed" />
+                <ScalarProperty Name="InstallmentAmountPayable" ColumnName="InstallmentAmountPayable" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_SearchOverAll_Showroom">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.v_SearchOverAll_Showroom">
+              <MappingFragment StoreEntitySet="v_SearchOverAll_Showroom">
+                <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="VCreationDate" ColumnName="VCreationDate" />
+                <ScalarProperty Name="VRemarks" ColumnName="VRemarks" />
+                <ScalarProperty Name="CC" ColumnName="CC" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+                <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+                <ScalarProperty Name="TRemarks" ColumnName="TRemarks" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="GCreationDate" ColumnName="GCreationDate" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="GPhoneNumber" ColumnName="GPhoneNumber" />
+                <ScalarProperty Name="GAddress" ColumnName="GAddress" />
+                <ScalarProperty Name="GFatherName" ColumnName="GFatherName" />
+                <ScalarProperty Name="GName" ColumnName="GName" />
+                <ScalarProperty Name="GCNIC" ColumnName="GCNIC" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_InstallmentDetail">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.v_InstallmentDetail">
+              <MappingFragment StoreEntitySet="v_InstallmentDetail">
+                <ScalarProperty Name="bCreationDate" ColumnName="bCreationDate" />
+                <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="vCreationDate" ColumnName="vCreationDate" />
+                <ScalarProperty Name="vRemarks" ColumnName="vRemarks" />
+                <ScalarProperty Name="CC" ColumnName="CC" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+                <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsPayed" ColumnName="IsPayed" />
+                <ScalarProperty Name="InstaTransactionID" ColumnName="InstaTransactionID" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="TotalAmountRemaining" ColumnName="TotalAmountRemaining" />
+                <ScalarProperty Name="TotalAmountPayed" ColumnName="TotalAmountPayed" />
+                <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+                <ScalarProperty Name="Late" ColumnName="Late" />
+                <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+                <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+                <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+                <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+                <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlackListedUsers">
+            <EntityTypeMapping TypeName="ShowRoomManagementModel.BlackListedUser">
+              <MappingFragment StoreEntitySet="BlackListedUsers">
+                <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
+                <ScalarProperty Name="BlackListedBy" ColumnName="BlackListedBy" />
+                <ScalarProperty Name="BlackListAs" ColumnName="BlackListAs" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,219 @@
+CREATE TABLE [dbo].[Buyer](
+	[CNIC] [varchar](16) NOT NULL,
+	[Name] [varchar](150) NOT NULL,
+	[FatherName] [varchar](150) NULL,
+	[Address] [varchar](250) NULL,
+	[PhoneNumber] [varchar](20) NOT NULL,
+	[PhoneNumber2] [varchar](20) NULL,
+	[CreditRating] [varchar](50) NULL,
+	[CreationDate] [datetime] NULL,
+ CONSTRAINT [PK_Buyer] PRIMARY KEY CLUSTERED 
+(
+	[CNIC] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Guarantor]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Guarantor](
+	[CNIC] [varchar](16) NOT NULL,
+	[Name] [varchar](150) NOT NULL,
+	[FatherName] [varchar](150) NULL,
+	[Address] [varchar](250) NULL,
+	[PhoneNumber] [varchar](20) NULL,
+	[Remarks] [varchar](250) NULL,
+	[CreationDate] [datetime] NULL,
+ CONSTRAINT [PK__Guaranto__AA570FD5885D6986] PRIMARY KEY CLUSTERED 
+(
+	[CNIC] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Installment]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Installment](
+	[InstallmentID] [int] IDENTITY(1,1) NOT NULL,
+	[InstallmentNumber] [int] NOT NULL,
+	[InstallmentAmount] [money] NOT NULL,
+	[Month] [varchar](50) NULL,
+	[Year] [varchar](50) NULL,
+	[DueDateStart] [datetime] NULL,
+	[DueDateEnd] [datetime] NULL,
+	[PaymentDate] [datetime] NULL,
+	[PayedAmount] [money] NULL,
+	[Late] [bit] NULL,
+	[ReceivedBy] [varchar](150) NULL,
+	[TotalAmountPayed] [money] NULL,
+	[TotalAmountRemaining] [money] NULL,
+	[CreationDate] [datetime] NOT NULL,
+	[TransactionID] [int] NOT NULL,
+	[IsPayed] [bit] NULL,
+ CONSTRAINT [PK__Installm__42B42E621D82EA72] PRIMARY KEY CLUSTERED 
+(
+	[InstallmentID] ASC,
+	[InstallmentNumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[PrintInstallment]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[PrintInstallment](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PrintDate] [datetime] NULL,
+	[InstallmentNumber] [int] NULL,
+	[InstallmentAmountPayable] [money] NULL,
+	[InstallmentAmountPayed] [money] NULL,
+	[Price] [money] NULL,
+	[TotalAmountPayedTill] [money] NULL,
+	[AdvanceAmount] [money] NULL,
+	[TotalAmountPayedbyInstallment] [money] NULL,
+	[TotalRemainingAmount] [money] NULL,
+	[NextInstallmentDueDate] [datetime] NULL,
+	[Comments] [varchar](150) NULL,
+	[CustomerName] [varchar](150) NULL,
+	[CustomerCNIC] [varchar](50) NULL,
+	[EnginerNumber] [varchar](50) NULL,
+	[ChasisNumber] [varchar](50) NULL,
+ CONSTRAINT [PK_PrintInstallment] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TempInstallment]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TempInstallment](
+	[InstallmentID] [int] IDENTITY(1,1) NOT NULL,
+	[InstallmentNumber] [int] NOT NULL,
+	[InstallmentAmount] [money] NOT NULL,
+	[Month] [varchar](50) NULL,
+	[Year] [varchar](50) NULL,
+	[DueDateStart] [date] NULL,
+	[DueDateEnd] [date] NULL,
+	[PaymentDate] [date] NULL,
+	[PayedAmount] [money] NULL,
+	[CreationDate] [date] NOT NULL,
+	[TransactionID] [int] NULL,
+ CONSTRAINT [PK_TempInstallment] PRIMARY KEY CLUSTERED 
+(
+	[InstallmentID] ASC,
+	[InstallmentNumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Transactions]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Transactions](
+	[TransactionId] [int] IDENTITY(1,1) NOT NULL,
+	[VehicleID] [int] NOT NULL,
+	[BuyerCNIC] [varchar](16) NOT NULL,
+	[TransactionDate] [date] NOT NULL,
+	[Remarks] [varchar](250) NULL,
+	[GuarantorCNIC] [varchar](16) NOT NULL,
+	[Price] [money] NULL,
+	[AdvanceAmount] [money] NULL,
+ CONSTRAINT [PK__Transact__55433A6B62793691] PRIMARY KEY CLUSTERED 
+(
+	[TransactionId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Vehicle]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Vehicle](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EngineNumber] [varchar](50) NULL,
+	[ChasisNumber] [varchar](50) NOT NULL,
+	[Model] [varchar](50) NULL,
+	[CC] [varchar](50) NULL,
+	[Remarks] [varchar](150) NULL,
+	[CreationDate] [datetime] NULL,
+	[RegistrationNo] [varchar](50) NULL,
+	[IsOld] [bit] NULL,
+ CONSTRAINT [PK__Vehicle__3214EC073F253942] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  View [dbo].[v_SearchOverAll]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[v_SearchOverAll]
+AS
+SELECT        b.CNIC, b.Name, b.FatherName, b.Address, b.PhoneNumber, b.PhoneNumber2, b.CreditRating, b.CreationDate, g.CNIC AS GCNIC, g.Name AS GName, g.FatherName AS GFatherName, g.Address AS GAddress, 
+                         g.PhoneNumber AS GPhoneNumber, g.Remarks, g.CreationDate AS GCreationDate, t.TransactionId, t.VehicleID, t.BuyerCNIC, t.TransactionDate, t.Remarks AS TRemarks, t.GuarantorCNIC, t.Price, t.AdvanceAmount, 
+                         v.Id, v.EngineNumber, v.ChasisNumber, v.Model, v.CC, v.Remarks AS VRemarks, v.CreationDate AS VCreationDate, v.RegistrationNo, v.IsOld
+FROM            dbo.Buyer AS b INNER JOIN
+                         dbo.Transactions AS t ON b.CNIC = t.BuyerCNIC INNER JOIN
+                         dbo.Guarantor AS g ON t.GuarantorCNIC = g.CNIC INNER JOIN
+                         dbo.Vehicle AS v ON t.VehicleID = v.Id
+
+GO
+/****** Object:  View [dbo].[v_SearchOverAll_Showroom]    Script Date: 17-Dec-15 12:14:23 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[v_SearchOverAll_Showroom]
+AS
+SELECT        b.CNIC, b.Name, b.FatherName, b.Address, b.PhoneNumber, b.PhoneNumber2, b.CreditRating, b.CreationDate, g.CNIC AS GCNIC, g.Name AS GName, g.FatherName AS GFatherName, g.Address AS GAddress, 
+                         g.PhoneNumber AS GPhoneNumber, g.Remarks, g.CreationDate AS GCreationDate, t.TransactionId, t.VehicleID, t.BuyerCNIC, t.TransactionDate, t.Remarks AS TRemarks, t.GuarantorCNIC, t.Price, t.AdvanceAmount, 
+                         v.Id, v.EngineNumber, v.ChasisNumber, v.Model, v.CC, v.Remarks AS VRemarks, v.CreationDate AS VCreationDate, v.RegistrationNo, v.IsOld
+FROM            dbo.Buyer AS b INNER JOIN
+                         dbo.Transactions AS t ON b.CNIC = t.BuyerCNIC INNER JOIN
+                         dbo.Guarantor AS g ON t.GuarantorCNIC = g.CNIC INNER JOIN
+                         dbo.Vehicle AS v ON t.VehicleID = v.Id

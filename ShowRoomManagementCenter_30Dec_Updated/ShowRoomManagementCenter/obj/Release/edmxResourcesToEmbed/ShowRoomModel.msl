@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShowRoomManagementModelStoreContainer" CdmEntityContainer="ShowRoomManagementEntities">
+    <EntitySetMapping Name="Buyers">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.Buyer">
+        <MappingFragment StoreEntitySet="Buyer">
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guarantors">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.Guarantor">
+        <MappingFragment StoreEntitySet="Guarantor">
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+          <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Installments">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.Installment">
+        <MappingFragment StoreEntitySet="Installment">
+          <ScalarProperty Name="IsPayed" ColumnName="IsPayed" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="TotalAmountRemaining" ColumnName="TotalAmountRemaining" />
+          <ScalarProperty Name="TotalAmountPayed" ColumnName="TotalAmountPayed" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="Late" ColumnName="Late" />
+          <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+          <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+          <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+          <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempInstallments">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.TempInstallment">
+        <MappingFragment StoreEntitySet="TempInstallment">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+          <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+          <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+          <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrintInstallments">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.PrintInstallment">
+        <MappingFragment StoreEntitySet="PrintInstallment">
+          <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+          <ScalarProperty Name="EnginerNumber" ColumnName="EnginerNumber" />
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="NextInstallmentDueDate" ColumnName="NextInstallmentDueDate" />
+          <ScalarProperty Name="TotalRemainingAmount" ColumnName="TotalRemainingAmount" />
+          <ScalarProperty Name="TotalAmountPayedbyInstallment" ColumnName="TotalAmountPayedbyInstallment" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="TotalAmountPayedTill" ColumnName="TotalAmountPayedTill" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="InstallmentAmountPayed" ColumnName="InstallmentAmountPayed" />
+          <ScalarProperty Name="InstallmentAmountPayable" ColumnName="InstallmentAmountPayable" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_SearchOverAll_Showroom">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.v_SearchOverAll_Showroom">
+        <MappingFragment StoreEntitySet="v_SearchOverAll_Showroom">
+          <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="VCreationDate" ColumnName="VCreationDate" />
+          <ScalarProperty Name="VRemarks" ColumnName="VRemarks" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+          <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+          <ScalarProperty Name="TRemarks" ColumnName="TRemarks" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="GCreationDate" ColumnName="GCreationDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="GPhoneNumber" ColumnName="GPhoneNumber" />
+          <ScalarProperty Name="GAddress" ColumnName="GAddress" />
+          <ScalarProperty Name="GFatherName" ColumnName="GFatherName" />
+          <ScalarProperty Name="GName" ColumnName="GName" />
+          <ScalarProperty Name="GCNIC" ColumnName="GCNIC" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_InstallmentDetail">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.v_InstallmentDetail">
+        <MappingFragment StoreEntitySet="v_InstallmentDetail">
+          <ScalarProperty Name="bCreationDate" ColumnName="bCreationDate" />
+          <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="IsOld" ColumnName="IsOld" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="vCreationDate" ColumnName="vCreationDate" />
+          <ScalarProperty Name="vRemarks" ColumnName="vRemarks" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ChasisNumber" ColumnName="ChasisNumber" />
+          <ScalarProperty Name="EngineNumber" ColumnName="EngineNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsPayed" ColumnName="IsPayed" />
+          <ScalarProperty Name="InstaTransactionID" ColumnName="InstaTransactionID" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="TotalAmountRemaining" ColumnName="TotalAmountRemaining" />
+          <ScalarProperty Name="TotalAmountPayed" ColumnName="TotalAmountPayed" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="Late" ColumnName="Late" />
+          <ScalarProperty Name="PayedAmount" ColumnName="PayedAmount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+          <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+          <ScalarProperty Name="InstallmentNumber" ColumnName="InstallmentNumber" />
+          <ScalarProperty Name="InstallmentID" ColumnName="InstallmentID" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="GuarantorCNIC" ColumnName="GuarantorCNIC" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="BuyerCNIC" ColumnName="BuyerCNIC" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlackListedUsers">
+      <EntityTypeMapping TypeName="ShowRoomManagementModel.BlackListedUser">
+        <MappingFragment StoreEntitySet="BlackListedUsers">
+          <ScalarProperty Name="BlackListDate" ColumnName="BlackListDate" />
+          <ScalarProperty Name="BlackListedBy" ColumnName="BlackListedBy" />
+          <ScalarProperty Name="BlackListAs" ColumnName="BlackListAs" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

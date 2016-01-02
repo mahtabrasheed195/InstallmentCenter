@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShowRoomManagementModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ShowRoomManagementEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Buyers" EntityType="ShowRoomManagementModel.Buyer" />
+    <EntitySet Name="Guarantors" EntityType="ShowRoomManagementModel.Guarantor" />
+    <EntitySet Name="Vehicles" EntityType="ShowRoomManagementModel.Vehicle" />
+    <EntitySet Name="Installments" EntityType="ShowRoomManagementModel.Installment" />
+    <EntitySet Name="TempInstallments" EntityType="ShowRoomManagementModel.TempInstallment" />
+    <EntitySet Name="Transactions" EntityType="ShowRoomManagementModel.Transaction" />
+    <EntitySet Name="PrintInstallments" EntityType="ShowRoomManagementModel.PrintInstallment" />
+    <EntitySet Name="v_SearchOverAll_Showroom" EntityType="ShowRoomManagementModel.v_SearchOverAll_Showroom" />
+    <EntitySet Name="v_InstallmentDetail" EntityType="ShowRoomManagementModel.v_InstallmentDetail" />
+    <EntitySet Name="BlackListedUsers" EntityType="ShowRoomManagementModel.BlackListedUser" />
+  </EntityContainer>
+  <EntityType Name="Buyer">
+    <Key>
+      <PropertyRef Name="CNIC" />
+    </Key>
+    <Property Name="CNIC" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="FatherName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CreditRating" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Guarantor">
+    <Key>
+      <PropertyRef Name="CNIC" />
+    </Key>
+    <Property Name="CNIC" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="FatherName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EngineNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ChasisNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Model" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CC" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Remarks" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsOld" />
+  </EntityType>
+  <EntityType Name="Installment">
+    <Key>
+      <PropertyRef Name="InstallmentID" />
+      <PropertyRef Name="InstallmentNumber" />
+    </Key>
+    <Property Type="Int32" Name="InstallmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="InstallmentNumber" Nullable="false" />
+    <Property Type="Decimal" Name="InstallmentAmount" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Month" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Year" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DueDateStart" Precision="3" />
+    <Property Type="DateTime" Name="DueDateEnd" Precision="3" />
+    <Property Type="DateTime" Name="PaymentDate" Precision="3" />
+    <Property Type="Decimal" Name="PayedAmount" Precision="19" Scale="4" />
+    <Property Type="Boolean" Name="Late" />
+    <Property Type="String" Name="ReceivedBy" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="TotalAmountPayed" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalAmountRemaining" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="TransactionID" Nullable="false" />
+    <Property Type="Boolean" Name="IsPayed" />
+  </EntityType>
+  <EntityType Name="TempInstallment">
+    <Key>
+      <PropertyRef Name="InstallmentID" />
+      <PropertyRef Name="InstallmentNumber" />
+    </Key>
+    <Property Type="Int32" Name="InstallmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="InstallmentNumber" Nullable="false" />
+    <Property Type="Decimal" Name="InstallmentAmount" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Month" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Year" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DueDateStart" Precision="3" />
+    <Property Type="DateTime" Name="DueDateEnd" Precision="3" />
+    <Property Type="DateTime" Name="PaymentDate" Precision="3" />
+    <Property Type="Decimal" Name="PayedAmount" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="TransactionID" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="VehicleID" />
+    <Property Type="String" Name="BuyerCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GuarantorCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="PrintInstallment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="PrintDate" Precision="3" />
+    <Property Type="Decimal" Name="InstallmentAmountPayable" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="InstallmentAmountPayed" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalAmountPayedTill" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalAmountPayedbyInstallment" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalRemainingAmount" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="NextInstallmentDueDate" Precision="3" />
+    <Property Type="String" Name="Comments" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="InstallmentNumber" />
+    <Property Type="String" Name="CustomerName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CustomerCNIC" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EnginerNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChasisNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_SearchOverAll_Showroom">
+    <Key>
+      <PropertyRef Name="CNIC" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="GCNIC" />
+      <PropertyRef Name="GName" />
+      <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="VehicleID" />
+      <PropertyRef Name="BuyerCNIC" />
+      <PropertyRef Name="TransactionDate" />
+      <PropertyRef Name="GuarantorCNIC" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ChasisNumber" />
+    </Key>
+    <Property Type="String" Name="CNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FatherName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber2" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreditRating" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="GCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GFatherName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GPhoneNumber" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="GCreationDate" Precision="3" />
+    <Property Type="Int32" Name="TransactionId" Nullable="false" />
+    <Property Type="Int32" Name="VehicleID" Nullable="false" />
+    <Property Type="String" Name="BuyerCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="TRemarks" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GuarantorCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="EngineNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChasisNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Model" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CC" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VRemarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="VCreationDate" Precision="3" />
+    <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsOld" />
+  </EntityType>
+  <EntityType Name="v_InstallmentDetail">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="BuyerCNIC" />
+      <PropertyRef Name="TransactionDate" />
+      <PropertyRef Name="GuarantorCNIC" />
+      <PropertyRef Name="InstallmentID" />
+      <PropertyRef Name="InstallmentNumber" />
+      <PropertyRef Name="InstallmentAmount" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="InstaTransactionID" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ChasisNumber" />
+      <PropertyRef Name="CNIC" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="PhoneNumber" />
+    </Key>
+    <Property Type="Int32" Name="TransactionId" Nullable="false" />
+    <Property Type="Int32" Name="VehicleID" />
+    <Property Type="String" Name="BuyerCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GuarantorCNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="AdvanceAmount" Precision="19" Scale="4" />
+    <Property Type="Int32" Name="InstallmentID" Nullable="false" />
+    <Property Type="Int32" Name="InstallmentNumber" Nullable="false" />
+    <Property Type="Decimal" Name="InstallmentAmount" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Month" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Year" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DueDateStart" Precision="3" />
+    <Property Type="DateTime" Name="DueDateEnd" Precision="3" />
+    <Property Type="DateTime" Name="PaymentDate" Precision="3" />
+    <Property Type="Decimal" Name="PayedAmount" Precision="19" Scale="4" />
+    <Property Type="Boolean" Name="Late" />
+    <Property Type="String" Name="ReceivedBy" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="TotalAmountPayed" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalAmountRemaining" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="InstaTransactionID" Nullable="false" />
+    <Property Type="Boolean" Name="IsPayed" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="EngineNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChasisNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Model" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CC" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="vRemarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="vCreationDate" Precision="3" />
+    <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsOld" />
+    <Property Type="String" Name="CNIC" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FatherName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber2" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreditRating" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="bCreationDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="BlackListedUser">
+    <Key>
+      <PropertyRef Name="CNIC" />
+    </Key>
+    <Property Name="CNIC" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BlackListAs" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BlackListedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BlackListDate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>
