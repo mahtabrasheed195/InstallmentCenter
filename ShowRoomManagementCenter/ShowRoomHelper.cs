@@ -1325,6 +1325,7 @@ namespace ShowRoomManagementCenter
             {
                 var installmentVar = (from data in showroomEntity.v_Recovery
                                       where data.PaymentDate>=startdate && data.PaymentDate<=enddate
+                                      orderby data.PaymentDate ascending
                                       select data);
 
                 return installmentVar.ToList();
@@ -1356,5 +1357,41 @@ namespace ShowRoomManagementCenter
 
         }
 
+        public static decimal getInstallmentRecoveryTotal(DateTime startdate, DateTime enddate)
+        {
+            try
+            {
+                decimal installmentVar = (from data in showroomEntity.v_Recovery
+                                      where data.PaymentDate >= startdate && data.PaymentDate <= enddate
+                                      select data.PayedAmount).Sum().Value;
+
+                return installmentVar;
+            }
+            catch (Exception Exp)
+            {
+                string path = @"C:\\Logs\\log.txt";
+                // This text is added only once to the file.
+                if (!File.Exists(path))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.Write(DateTime.Now.ToString() + " : \n");
+
+                    }
+                }
+
+                // This text is always added, making the file longer over time
+                // if it is not deleted.
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.Write(DateTime.Now.ToString() + " : \n");
+                    sw.WriteLine(Exp.Message + "\n");
+                }
+                return 0;
+            }
+
+
+        }
     }
 }

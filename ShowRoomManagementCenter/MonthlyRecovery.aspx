@@ -56,13 +56,21 @@
                           </div>
                           <div class="col-lg-4">
                                               
-                              <ig:WebDropDown ID="webDDL_Months" runat="server" Width="200px"></ig:WebDropDown>
+                              <ig:WebDropDown ID="webDDL_Months" runat="server" Width="200px" AutoPostBack="True" OnSelectionChanged="webDDL_Months_SelectionChanged"></ig:WebDropDown>
                           </div>
                           <div class="col-lg-3">
                               <asp:Label ID="lblSuccess" runat="server" Text=""  Visible="false" CssClass="alert-success"></asp:Label>  
                           </div>
                        </div>
-
+             <div class="row">
+                           <div class="col-lg-2">
+                                <asp:Label ID="Label2" runat="server" Font-Bold="true" Font-Size="Large" Text="Total Recovery :"></asp:Label>
+                          </div>
+                          <div class="col-lg-3">
+                                <asp:Label ID="lblTotalRecovery" runat="server" Font-Bold="true" Font-Size="Large" Text=""></asp:Label>
+                          </div>
+                          
+             </div>
             <br />
                        <!-- Row Applicant -->
             <div class="row">

@@ -140,7 +140,10 @@
                          <a id="blog" runat="server" href="searchForm.aspx">Search</a>
                     </li>
                     <li>
-                         <%--<a id="contact" runat="server" href="installmentsubmission.aspx">Submit Installment</a>--%>
+                         <%--<a id="contact" runat="server" href="MonthlyRecovery.aspx">Submit Installment</a>--%>
+                    </li> 
+                     <li>
+                         <a id="A1" runat="server" href="MonthlyRecovery.aspx">Monthly Recovery</a>
                     </li>  
                      <li>
                          <a id="A2" runat="server" href="BlackListCustomer.aspx">Black List</a>
