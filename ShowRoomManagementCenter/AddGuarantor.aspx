@@ -45,7 +45,7 @@
                               <h3>Add Guarantor Information</h3> 
                           </div>
                            <div class="col-lg-3">
-
+                                 <asp:Button ID="Btn_Next2" runat="server" Text="Next" CssClass="btn btn-primary" ValidationGroup="AddApplicant" OnClick="Btn_Next_Click"  />
                           </div>
                         
                     </div>
@@ -79,6 +79,7 @@
                           </div>
                           <div class="col-lg-3">
                               <asp:RequiredFieldValidator ID="reqFV_CNIC" runat="server" ControlToValidate="TextBox_GCNIC" CssClass="alert-danger" ErrorMessage="*Guarantor CNIC is Required" ValidationGroup="AddApplicant"></asp:RequiredFieldValidator>
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox_GCNIC" ErrorMessage="Please Enter Correct CNIC, without dashes" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="AddApplicant"></asp:RegularExpressionValidator>
                           </div>
                        </div>
             <br />
@@ -135,6 +136,7 @@
                           </div>
                           <div class="col-lg-3">
                               <asp:RequiredFieldValidator ID="reqFV_GPhNo" runat="server" ControlToValidate="TextBox_GPhoneNumber" CssClass="alert-danger" ErrorMessage="*Guarantor Phone Number is Required" ValidationGroup="AddApplicant"></asp:RequiredFieldValidator>
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox_GPhoneNumber" ErrorMessage="Please Enter Correct Phone Number, without dashes" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="AddApplicant"></asp:RegularExpressionValidator>
                           </div>
                        </div>
             <br />

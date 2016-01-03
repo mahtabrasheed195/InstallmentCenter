@@ -24,6 +24,7 @@ namespace ShowRoomManagementCenter
             
 
             Btn_Next.Visible = false;
+            Btn_Next2.Visible = false;
 
             if (!IsPostBack)
             {
@@ -61,6 +62,7 @@ namespace ShowRoomManagementCenter
                         lblSuccess.Visible = true;
                         isSuccess = true;
                         Btn_Next.Visible = true;
+                        Btn_Next2.Visible = true;
                         Session["s_ApplicantCNIC"] = cus_CNIC;
                     }
                     else
@@ -74,6 +76,7 @@ namespace ShowRoomManagementCenter
                     Session["s_ApplicantCNIC"] = cus_CNIC;
                     isSuccess = true;
                     Btn_Next.Visible = true;
+                    Btn_Next2.Visible = true;
                     lblSuccess.Text = "Existing Applicant Added Successfully For Transaction";
                     lblSuccess.Visible = true;
                 }

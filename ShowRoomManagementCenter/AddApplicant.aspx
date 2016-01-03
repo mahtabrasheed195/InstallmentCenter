@@ -47,6 +47,7 @@
                                <h3>Add Applicant Information</h3>
                           </div>
                            <div class="col-lg-3">
+                                                            <asp:Button ID="Btn_Next2" runat="server" Text="Next" CssClass="btn btn-primary" ValidationGroup="AddApplicant" OnClick="Btn_Next_Click"  />
 
                           </div>
                         
@@ -82,6 +83,7 @@
                           </div>
                           <div class="col-lg-3">
                               <asp:RequiredFieldValidator ID="reqFV_CNIC" runat="server" ControlToValidate="TextBox_CustomerCNIC" CssClass="alert-danger" ErrorMessage="*Customer CNIC is Required" ValidationGroup="AddApplicant"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox_CustomerCNIC" ErrorMessage="Please Enter Correct CNIC, without dashes" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="AddApplicant"></asp:RegularExpressionValidator>
                           </div>
                        </div>
             <br />
@@ -138,6 +140,7 @@
                           </div>
                           <div class="col-lg-3">
                               <asp:RequiredFieldValidator ID="reqFV_CPhNo" runat="server" ControlToValidate="TextBox_PhoneNumber" CssClass="alert-danger" ErrorMessage="*Customer Phone Number is Required" ValidationGroup="AddApplicant"></asp:RequiredFieldValidator>
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox_PhoneNumber" ErrorMessage="Please Enter Correct Phone Number, without dashes" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="AddApplicant"></asp:RegularExpressionValidator>
                           </div>
                        </div>
             <br />

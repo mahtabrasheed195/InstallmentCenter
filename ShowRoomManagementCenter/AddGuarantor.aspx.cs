@@ -22,6 +22,7 @@ namespace ShowRoomManagementCenter
 
            
             Btn_Next.Visible = false;
+            Btn_Next2.Visible = false;
 
             if (!IsPostBack)
             {
@@ -51,6 +52,7 @@ namespace ShowRoomManagementCenter
                     lblSuccess.Visible = true;
                     isSuccess = true;
                     Btn_Next.Visible = true;
+                    Btn_Next2.Visible = true;
                     Session["s_GuarantorCNIC"] = grntr_CNIC;
                 }
                 else
@@ -64,6 +66,7 @@ namespace ShowRoomManagementCenter
                 Session["s_GuarantorCNIC"] = grntr_CNIC;
                 isSuccess = true;
                 Btn_Next.Visible = true;
+                Btn_Next2.Visible = true;
                 lblSuccess.Text = "Existing Guarantor Added Successfully For Transaction";
                 lblSuccess.Visible = true;
             }
