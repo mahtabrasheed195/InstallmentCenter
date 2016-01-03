@@ -87,6 +87,7 @@
     <Content Include="installmentsubmission.aspx" />
     <Content Include="InstallmentSubmit.aspx" />
     <Content Include="MonthlyRecovery.aspx" />
+    <Content Include="MonthlySale.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="searchForm.aspx" />
     <Content Include="sellmotorcycle.aspx" />
@@ -191,6 +192,13 @@
     </Compile>
     <Compile Include="MonthlyRecovery.aspx.designer.cs">
       <DependentUpon>MonthlyRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MonthlySale.aspx.cs">
+      <DependentUpon>MonthlySale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MonthlySale.aspx.designer.cs">
+      <DependentUpon>MonthlySale.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrintHelper.cs" />
     <Compile Include="PrintInstallment.cs">
