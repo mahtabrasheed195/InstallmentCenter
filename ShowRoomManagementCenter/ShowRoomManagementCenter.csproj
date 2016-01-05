@@ -86,6 +86,7 @@
     <Content Include="InstallmentReceipt.aspx" />
     <Content Include="installmentsubmission.aspx" />
     <Content Include="InstallmentSubmit.aspx" />
+    <Content Include="MonthlyDueInstallment.aspx" />
     <Content Include="MonthlyRecovery.aspx" />
     <Content Include="MonthlySale.aspx" />
     <Content Include="Search.aspx" />
@@ -186,6 +187,13 @@
       <DependentUpon>InstallmentSubmit.aspx</DependentUpon>
     </Compile>
     <Compile Include="InstallmentTable.cs" />
+    <Compile Include="MonthlyDueInstallment.aspx.cs">
+      <DependentUpon>MonthlyDueInstallment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MonthlyDueInstallment.aspx.designer.cs">
+      <DependentUpon>MonthlyDueInstallment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MonthlyRecovery.aspx.cs">
       <DependentUpon>MonthlyRecovery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

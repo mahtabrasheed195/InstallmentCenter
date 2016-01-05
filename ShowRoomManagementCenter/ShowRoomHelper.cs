@@ -1357,6 +1357,44 @@ namespace ShowRoomManagementCenter
 
         }
 
+        public static List<v_Recovery> getInstallmentPendingRecovery(DateTime startdate, DateTime enddate)
+        {
+            try
+            {
+                var installmentVar = (from data in showroomEntity.v_Recovery
+                                      where data.DueDateEnd >= startdate && data.DueDateEnd <= enddate && data.IsPayed==null
+                                      orderby data.InstallmentAmount descending
+                                      select data);
+
+                return installmentVar.ToList();
+            }
+            catch (Exception Exp)
+            {
+                string path = @"C:\\Logs\\log.txt";
+                // This text is added only once to the file.
+                if (!File.Exists(path))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.Write(DateTime.Now.ToString() + " : \n");
+
+                    }
+                }
+
+                // This text is always added, making the file longer over time
+                // if it is not deleted.
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.Write(DateTime.Now.ToString() + " : \n");
+                    sw.WriteLine(Exp.Message + "\n");
+                }
+                return null;
+            }
+
+
+        }
+
         public static decimal getInstallmentRecoveryTotal(DateTime startdate, DateTime enddate)
         {
             try

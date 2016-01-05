@@ -144,6 +144,9 @@
                     </li> 
                      <li>
                          <a id="A1" runat="server" href="MonthlyRecovery.aspx">Monthly Recovery</a>
+                    </li> 
+                    <li>
+                         <a id="A3" runat="server" href="MonthlyDueInstallment.aspx">Pending Recovery</a>
                     </li>  
                      <li>
                          <a id="A2" runat="server" href="BlackListCustomer.aspx">Black List</a>
