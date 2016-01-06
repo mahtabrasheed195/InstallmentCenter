@@ -107,19 +107,19 @@ namespace ShowRoomManagementCenter
             divRow.TagName = "div";
 
             HtmlGenericControl divCol1 = new HtmlGenericControl();
-            divCol1.Attributes["class"] = "col-lg-2";
+            divCol1.Attributes["class"] = "col-lg-1";
             divCol1.TagName = "div";
 
             HtmlGenericControl divCol2 = new HtmlGenericControl();
-            divCol2.Attributes["class"] = "col-lg-2";
+            divCol2.Attributes["class"] = "col-lg-1";
             divCol2.TagName = "div";
 
             HtmlGenericControl divCol3 = new HtmlGenericControl();
-            divCol3.Attributes["class"] = "col-lg-1";
+            divCol3.Attributes["class"] = "col-lg-2";
             divCol3.TagName = "div";
 
             HtmlGenericControl divCol4 = new HtmlGenericControl();
-            divCol4.Attributes["class"] = "col-lg-3";
+            divCol4.Attributes["class"] = "col-lg-4";
             divCol4.TagName = "div";
 
 
@@ -128,20 +128,24 @@ namespace ShowRoomManagementCenter
             divCol9.TagName = "div";
 
             HtmlGenericControl divCol10 = new HtmlGenericControl();
-            divCol10.Attributes["class"] = "col-lg-3";
+            divCol10.Attributes["class"] = "col-lg-4";
             divCol10.TagName = "div";
 
-            Label lblInstallmentNo = new Label();
+            HtmlGenericControl divCol11 = new HtmlGenericControl();
+            divCol10.Attributes["class"] = "col-lg-2";
+            divCol10.TagName = "div";
+
+            //Label lblInstallmentNo = new Label();
             TextBox txtInstallmentNo = new TextBox();
 
-            lblInstallmentNo.ID = "lblInstallmentNo_" + instNo.ToString();
+            //lblInstallmentNo.ID = "lblInstallmentNo_" + instNo.ToString();
             txtInstallmentNo.ID = "txtInstallmentNo_" + instNo.ToString();
 
-            lblInstallmentNo.Text = "Install. No";
+            //lblInstallmentNo.Text = "Install. No";
             txtInstallmentNo.Text = (instNo + 1).ToString();
             txtInstallmentNo.ReadOnly = true;
-
-            divCol1.Controls.Add(lblInstallmentNo);
+            txtInstallmentNo.Width = 50;
+            //divCol1.Controls.Add(lblInstallmentNo);
             divCol2.Controls.Add(txtInstallmentNo);
 
             Label lblInstallmentAmount = new Label();
@@ -149,23 +153,25 @@ namespace ShowRoomManagementCenter
             RequiredFieldValidator rfvAmount = new RequiredFieldValidator();
             rfvAmount.ID = "rfvAmount_" + instNo.ToString();
             rfvAmount.ControlToValidate = "txtInstallmentAmount_" + instNo.ToString();
-            rfvAmount.ErrorMessage = "Please Enter Amount";
+            rfvAmount.ErrorMessage = "Enter Amount";
             //rfvAmount.CssClass = "";
+            rfvAmount.ForeColor = System.Drawing.Color.Red;
 
 
             RangeValidator rangeAmount = new RangeValidator();
             rangeAmount.ID = "rangeAmount_" + instNo.ToString();
             rangeAmount.ControlToValidate = "txtInstallmentAmount_" + instNo.ToString();
-            rangeAmount.ErrorMessage = "Amount Not Correct";
+            rangeAmount.ErrorMessage = "Invalid Amount";
             rangeAmount.Type = ValidationDataType.Currency;
             rangeAmount.MaximumValue = "1000000";
             rangeAmount.MinimumValue = "0";
+            rangeAmount.ForeColor = System.Drawing.Color.Red;
 
 
             lblInstallmentAmount.ID = "lblInstallmentAmount_" + instNo.ToString();
             txtInstallmentAmount.ID = "txtInstallmentAmount_" + instNo.ToString();
 
-            lblInstallmentAmount.Text = "Installment Amount";
+            lblInstallmentAmount.Text = "Install. Amount";
 
             divCol3.Controls.Add(lblInstallmentAmount);
             divCol4.Controls.Add(txtInstallmentAmount);
@@ -185,13 +191,15 @@ namespace ShowRoomManagementCenter
             rangeDueDate.Type = ValidationDataType.Date;
             rangeDueDate.MaximumValue = "9999/12/28";
             rangeDueDate.MinimumValue = "1000/12/28";
+            rangeDueDate.ForeColor = System.Drawing.Color.Red;
 
 
             RequiredFieldValidator rfqValidator = new RequiredFieldValidator();
 
             rfqValidator.ID = "rfqValidator_" + instNo.ToString();
-            rfqValidator.ErrorMessage = "Please enter the due date";
+            rfqValidator.ErrorMessage = "Enter Due Date";
             rfqValidator.ControlToValidate = "DTPInstallmentDueDate_" + instNo.ToString();
+            rfqValidator.ForeColor = System.Drawing.Color.Red;
 
 
             Infragistics.Web.UI.EditorControls.WebDatePicker dtpick = new Infragistics.Web.UI.EditorControls.WebDatePicker();
@@ -204,15 +212,16 @@ namespace ShowRoomManagementCenter
 
             divCol9.Controls.Add(lblInstallmentDueDate);
             divCol10.Controls.Add(dtpick);
-            divCol10.Controls.Add(rfqValidator);
+            divCol11.Controls.Add(rfqValidator);
 
-            divRow.Controls.Add(divCol1);
+           // divRow.Controls.Add(divCol1);
             divRow.Controls.Add(divCol2);
             divRow.Controls.Add(divCol3);
             divRow.Controls.Add(divCol4);
 
             divRow.Controls.Add(divCol9);
             divRow.Controls.Add(divCol10);
+            divRow.Controls.Add(divCol11);
 
             placeHolderInstallment.Controls.Add(divRow);
 
@@ -225,19 +234,19 @@ namespace ShowRoomManagementCenter
             divRow.TagName = "div";
 
             HtmlGenericControl divCol1 = new HtmlGenericControl();
-            divCol1.Attributes["class"] = "col-lg-2";
+            divCol1.Attributes["class"] = "col-lg-1";
             divCol1.TagName = "div";
 
             HtmlGenericControl divCol2 = new HtmlGenericControl();
-            divCol2.Attributes["class"] = "col-lg-2";
+            divCol2.Attributes["class"] = "col-lg-1";
             divCol2.TagName = "div";
 
             HtmlGenericControl divCol3 = new HtmlGenericControl();
-            divCol3.Attributes["class"] = "col-lg-1";
+            divCol3.Attributes["class"] = "col-lg-2";
             divCol3.TagName = "div";
 
             HtmlGenericControl divCol4 = new HtmlGenericControl();
-            divCol4.Attributes["class"] = "col-lg-3";
+            divCol4.Attributes["class"] = "col-lg-4";
             divCol4.TagName = "div";
 
 
@@ -246,20 +255,24 @@ namespace ShowRoomManagementCenter
             divCol9.TagName = "div";
 
             HtmlGenericControl divCol10 = new HtmlGenericControl();
-            divCol10.Attributes["class"] = "col-lg-3";
+            divCol10.Attributes["class"] = "col-lg-2";
             divCol10.TagName = "div";
 
-            Label lblInstallmentNo = new Label();
+            HtmlGenericControl divCol11 = new HtmlGenericControl();
+            divCol10.Attributes["class"] = "col-lg-2";
+            divCol10.TagName = "div";
+
+            //Label lblInstallmentNo = new Label();
             TextBox txtInstallmentNo = new TextBox();
 
-            lblInstallmentNo.ID = "lblInstallmentNo_" + NumberOfInstallments.ToString();
+            //lblInstallmentNo.ID = "lblInstallmentNo_" + NumberOfInstallments.ToString();
             txtInstallmentNo.ID = "txtInstallmentNo_" + NumberOfInstallments.ToString();
 
-            lblInstallmentNo.Text = "Install. No";
+           // lblInstallmentNo.Text = "Install. No";
             txtInstallmentNo.Text = (NumberOfInstallments + 1).ToString();
             txtInstallmentNo.ReadOnly = true;
-
-            divCol1.Controls.Add(lblInstallmentNo);
+            txtInstallmentNo.Width = 50;
+            //divCol1.Controls.Add(lblInstallmentNo);
             divCol2.Controls.Add(txtInstallmentNo);
 
             Label lblInstallmentAmount = new Label();
@@ -268,21 +281,22 @@ namespace ShowRoomManagementCenter
             RequiredFieldValidator rfvAmount = new RequiredFieldValidator();
             rfvAmount.ID = "rfvAmount_" + NumberOfInstallments.ToString();
             rfvAmount.ControlToValidate = "txtInstallmentAmount_" + NumberOfInstallments.ToString();
-            rfvAmount.ErrorMessage = "Please Enter Amount";
+            rfvAmount.ErrorMessage = "Enter Amount";
+            rfvAmount.ForeColor = System.Drawing.Color.Red;
 
             RangeValidator rangeAmount = new RangeValidator();
             rangeAmount.ID = "rangeAmount_" + NumberOfInstallments.ToString();
             rangeAmount.ControlToValidate = "txtInstallmentAmount_" + NumberOfInstallments.ToString();
-            rangeAmount.ErrorMessage = "Amount Not Correct";
+            rangeAmount.ErrorMessage = "Invalid Amount";
             rangeAmount.Type = ValidationDataType.Currency;
             rangeAmount.MaximumValue = "1000000";
             rangeAmount.MinimumValue = "0";
-
+            rangeAmount.ForeColor = System.Drawing.Color.Red;
 
             lblInstallmentAmount.ID = "lblInstallmentAmount_" + NumberOfInstallments.ToString();
             txtInstallmentAmount.ID = "txtInstallmentAmount_" + NumberOfInstallments.ToString();
 
-            lblInstallmentAmount.Text = "Installment Amount";
+            lblInstallmentAmount.Text = "Install. Amount";
 
             divCol3.Controls.Add(lblInstallmentAmount);
             divCol4.Controls.Add(txtInstallmentAmount);
@@ -299,13 +313,14 @@ namespace ShowRoomManagementCenter
             rangeDueDate.Type = ValidationDataType.Date;
             rangeDueDate.MaximumValue = "9999/12/28";
             rangeDueDate.MinimumValue = "1000/12/28";
-
+            rangeDueDate.ForeColor = System.Drawing.Color.Red;
 
             RequiredFieldValidator rfqValidator = new RequiredFieldValidator();
 
             rfqValidator.ID = "rfqValidator_" + NumberOfInstallments.ToString();
-            rfqValidator.ErrorMessage = "Please enter the due date";
+            rfqValidator.ErrorMessage = "Enter Due Date";
             rfqValidator.ControlToValidate = "DTPInstallmentDueDate_" + NumberOfInstallments.ToString();
+            rfqValidator.ForeColor = System.Drawing.Color.Red;
 
             Infragistics.Web.UI.EditorControls.WebDatePicker dtpick = new Infragistics.Web.UI.EditorControls.WebDatePicker();
             dtpick.ID = "DTPInstallmentDueDate_" + NumberOfInstallments.ToString();
@@ -317,18 +332,16 @@ namespace ShowRoomManagementCenter
 
             divCol9.Controls.Add(lblInstallmentDueDate);
             divCol10.Controls.Add(dtpick);
-            divCol10.Controls.Add(rfqValidator);
+            divCol11.Controls.Add(rfqValidator);
 
-            divRow.Controls.Add(divCol1);
+           // divRow.Controls.Add(divCol1);
             divRow.Controls.Add(divCol2);
             divRow.Controls.Add(divCol3);
             divRow.Controls.Add(divCol4);
-            //divRow.Controls.Add(divCol5);
-            //divRow.Controls.Add(divCol6);
-            //divRow.Controls.Add(divCol7);
-            //divRow.Controls.Add(divCol8);
+
             divRow.Controls.Add(divCol9);
             divRow.Controls.Add(divCol10);
+            divRow.Controls.Add(divCol11);
 
             placeHolderInstallment.Controls.Add(divRow);
 
@@ -451,12 +464,25 @@ namespace ShowRoomManagementCenter
 
         protected void Btn_AddInstallment_Click(object sender, EventArgs e)
         {
+            IntallmentAmountTrack();
             createInstallmentElements();
+        }
+
+        private void IntallmentAmountTrack()
+        {
+                decimal installmentAmount = getTotalInstallmentAmount();
+                lblInstaAmount.Text = "Installment Amount:  " + installmentAmount;
+                decimal totalRemaining = InstallmentManager.getVehiclePrice(EngineNo) - InstallmentManager.getAdvancePayedAmount(EngineNo);
+                lblTotalRemaining.Text = "Total Remaining: " + totalRemaining;
+
+                decimal remainingNow = totalRemaining - installmentAmount;
+
+                lblRemaining.Text = "Remaining Currently:  " + remainingNow;
         }
 
         protected void Btn_VerifyValues_Click(object sender, EventArgs e)
         {
-            lblInstaAmount.Text = getTotalInstallmentAmount().ToString();
+            IntallmentAmountTrack();
             webDataGrid_Installments.DataSource = getInstallmentList();
             webDataGrid_Installments.DataBind();
         }
@@ -471,19 +497,29 @@ namespace ShowRoomManagementCenter
                
                 int vehID = ShowRoomHelper.getVehicleID(EngineNo);
 
+                decimal totalRemaining = InstallmentManager.getVehiclePrice(EngineNo) - InstallmentManager.getAdvancePayedAmount(EngineNo);
+                decimal totalInstallmentAmount=getTotalInstallmentAmount();
 
                 if (addTrans)
                 {
-                    if (saveInstallments(instaList, TransactionID))
+                    if (totalRemaining == totalInstallmentAmount)
                     {
-                        lblSuccess.Text = "Installments Added Successfully";
-                        lblSuccess.Visible = true;
-                        saveFlag = true;
-                        //Btn_PrintPlan.Visible = true;
+                        if (saveInstallments(instaList, TransactionID))
+                        {
+                            lblSuccess.Text = "Installments Added Successfully";
+                            lblSuccess.Visible = true;
+                            saveFlag = true;
+                            //Btn_PrintPlan.Visible = true;
+                        }
+                        else
+                        {
+                            lblStatus.Text = "Transaction Not Added Successfully";
+                            lblStatus.Visible = true;
+                        }
                     }
                     else
                     {
-                        lblStatus.Text = "Transaction Not Added Successfully";
+                        lblStatus.Text = "Remaining and Total Installment Amount are Not Equal: Remaining= " + totalRemaining + " Installment Amount: " + totalInstallmentAmount;
                         lblStatus.Visible = true;
                     }
                 }

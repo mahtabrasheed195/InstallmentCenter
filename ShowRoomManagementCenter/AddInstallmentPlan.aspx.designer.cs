@@ -130,6 +130,15 @@ namespace ShowRoomManagementCenter {
         protected global::System.Web.UI.WebControls.Label lblAdvanceAmount;
         
         /// <summary>
+        /// Btn_AddInstallment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_AddInstallment;
+        
+        /// <summary>
         /// lblInstaAmount control.
         /// </summary>
         /// <remarks>
@@ -139,13 +148,40 @@ namespace ShowRoomManagementCenter {
         protected global::System.Web.UI.WebControls.Label lblInstaAmount;
         
         /// <summary>
-        /// Btn_AddInstallment control.
+        /// lblRemaining control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_AddInstallment;
+        protected global::System.Web.UI.WebControls.Label lblRemaining;
+        
+        /// <summary>
+        /// lblTotalRemaining control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalRemaining;
+        
+        /// <summary>
+        /// lblSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
+        
+        /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
         
         /// <summary>
         /// placeHolderInstallment control.
@@ -200,32 +236,5 @@ namespace ShowRoomManagementCenter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_PrintPlan;
-        
-        /// <summary>
-        /// lblSuccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuccess;
-        
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
-        
-        /// <summary>
-        /// Btn_Next control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Next;
     }
 }

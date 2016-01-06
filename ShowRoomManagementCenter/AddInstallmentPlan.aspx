@@ -108,17 +108,36 @@
                           </div>
                       </div>
              <br />
- 
+ <br />
     
                        <!-- Row  -->
             <div class="row">
-                          <div class="col-lg-2">
-                              <asp:Label ID="lblInstaAmount" runat="server" Text=""></asp:Label>
-                          </div>
-                          <div class="col-lg-10">  
+                          
+                          <div class="col-lg-3">  
                                     <asp:Button ID="Btn_AddInstallment" CssClass="btn btn-primary" runat="server" Text="Add Installment" OnClick="Btn_AddInstallment_Click" />
                            </div>
+                            
+                            <div class="col-lg-3">
+                                  <asp:Label ID="lblInstaAmount" runat="server" Text="" ForeColor="Blue" Font-Bold="true" Font-Size="Large"></asp:Label>
+                              </div>
+                            <div class="col-lg-4">
+                                  <asp:Label ID="lblRemaining" runat="server" Text="" ForeColor="Red" Font-Bold="true" Font-Size="Large"></asp:Label>
+                              </div>
+                            <div class="col-lg-1">
+                                <asp:Label ID="lblTotalRemaining" runat="server" Text="" ForeColor="Red" Visible="false" Font-Bold="true" Font-Size="Large"></asp:Label>
+                            </div>
+                        
              </div> 
+            <br />
+                     <div class="row">
+                          
+                          <div class="col-lg-12">
+                              <asp:Label ID="lblSuccess" runat="server" Text=""  Visible="false" ForeColor="Green" Font-Bold="true" Font-Size="Large"></asp:Label>                  
+                               <asp:Label ID="lblStatus" runat="server" Text="" Visible="false" ForeColor="Red" Font-Bold="true" Font-Size="Large"></asp:Label>  
+                          </div>
+                          
+                       </div>
+
             <br />
                <asp:PlaceHolder ID="placeHolderInstallment" runat="server">
                                                    
@@ -158,24 +177,7 @@
             </div>
                          
             <br />
-                       <!-- Row Applicant -->
-                    <div class="row">
-                          <div class="col-lg-3">
-
-                          </div>
-                          <div class="col-lg-2">
-                                                
-                              
-                          </div>
-                          <div class="col-lg-4">
-                              <asp:Label ID="lblSuccess" runat="server" Text=""  Visible="false" CssClass="alert-success"></asp:Label>                  
-                               <asp:Label ID="lblStatus" runat="server" Text="" Visible="false" CssClass="alert-warning" ></asp:Label>  
-                          </div>
-                          <div class="col-lg-3">
-
-                          </div>
-                       </div>
-                       <!-- Row Applicant -->
+                      
                                     <!-- Row Applicant -->
 
                <div class="row">
@@ -190,7 +192,7 @@
                               
                           </div>
                           <div class="col-lg-1">
-                             <asp:Button ID="Btn_Next" runat="server" Text="Next" CssClass="btn btn-primary" ValidationGroup="AddApplicant" OnClick="Btn_Next_Click"  />
+                             <%--<asp:Button ID="Btn_Next" runat="server" Text="Next" CssClass="btn btn-primary" ValidationGroup="AddApplicant" OnClick="Btn_Next_Click"  />--%>
 
                           </div>
              </div>
